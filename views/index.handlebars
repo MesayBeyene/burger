@@ -1,4 +1,8 @@
-<h1>Mesi's Burgers App</h1>
+<h1>Eat-Da-Burger!</h1>
+{{!-- <div class="container>
+
+
+<div id="avalable">
 <ul>
   {{#each burger}}
   {{#unless devoured}}
@@ -8,10 +12,15 @@
   {{/unless}}  
   {{/each}}
 </ul>
-<input id="burgerInput" type="text" />
-<button id="submit">Submit</button>
+</div>
+
+<div id="imgDiv">
+    <img src="/assets/image/Burger-img.jpg">
+</div>
+
+
 <ul>
-  {{#each burger}}
+    {{#each burger}}
     {{#if devoured}}
     <li>{{burger_name}}
     </li>
@@ -19,30 +28,53 @@
   {{/each}}
 </ul> 
 
-{{!-- <ul>
-  {{#each cats}}
-    {{#unless sleepy}}
-      {{> cats/cat-block sleep=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
+<div id="devourd">
+<input id="burgerInput" type="text" />
+<button id="submit">Submit</button>
+<p>Enter the burger you like to eat and submit it!</p>
+</div>
+</div> --}}
 
-<h2>Cats that are sleepy!</h2>
 
-<ul>
-  {{#each cats}}
-    {{#if sleepy}}
-      {{> cats/cat-block sleep=false}}
-    {{/if}}
-  {{/each}}
-</ul> --}}
+<section class="main">
+                
+    <aside>
+            <div id="content">
+                <ul>
+                    {{#each burger}}
+                    {{#unless devoured}}
+                    <li>{{burger_name}}
+                        <button class="devour" data-id="{{this.id}}">Devour</button>
+                    </li>
+                    {{/unless}}  
+                    {{/each}}
+                </ul>                  
+            </div>
+    </aside>
 
-{{!-- <li>
-	{{name}}
+    <aside>
+        <div id="content">
+            <img src="/assets/image/Burger-img.jpg">                    
+        </div>
+    </aside>
 
-	<button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
-		{{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
-	</button>
+        <aside>
+            <div id="content">
+                <ul>
+                    {{#each burger}}
+                    {{#if devoured}}
+                    <li>{{burger_name}}
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>       
+            </div>
+        </aside>
 
-	<button class="delete-cat" data-id="{{this.id}}">DELETE!</button>
-</li> --}}
+</section>
+<section class="submit">
+       <input id="burgerInput" type="text" />
+        <button id="submit">Submit</button>
+        <p>Enter the burger you like to eat and submit it</p>         
+</section>
+            
